@@ -1,0 +1,174 @@
+:root {
+    font-size: 16px;
+    --fontList: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --veryLightBlue: #FAFCFD;
+    --periGrey: #9BA1BA;
+    --mutedPeriwinkle: #4A5DB1;
+    --mutedPeriwinkleShadow: hsla(229, 58%, 69%, 28%);
+    --cornFlower: #4B65D9;
+    --electricBlue: #17309A;
+    --veryDarkBlue: #132367;
+}
+
+body {
+    background-color: var(--veryLightBlue);
+    font-family: var(--fontList);
+    font-size: 18px;
+    color: var(--veryDarkBlue);
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+label, .label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    /* margin-bottom: 8px; */
+    line-height: 34px;
+}
+
+.labelHelper {
+    font-weight: normal;
+}
+
+button {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--veryLightBlue);
+    background-color: var(--electricBlue);
+    border: 3px solid var(--cornFlower);
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--cornFlower);
+}
+
+.secondaryButton {
+    background-color: var(--periGrey);
+}
+
+input[type=text], 
+input[type=number], 
+input[type=email],
+input[type=password],
+textarea {
+    font-family: var(--fontList);
+    font-size: 18px;
+    border: 1px solid var(--cornFlower);
+    border-radius: 4px;
+    padding: 8px 8px;
+    color: var(--electricBlue);
+    display: block;
+    margin-bottom: 16px;
+    width: 300px;
+}
+
+input[type=text]::placeholder, 
+input[type=number]::placeholder, 
+input[type=email]::placeholder,
+input[type=password]::placeholder,
+textarea::placeholder {
+    color: var(--periGrey);
+}
+
+input[type=number] {
+    width: 80px;
+}
+
+.form-control {
+    font-weight: normal;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  input[type="checkbox"] {
+    /* ...existing styles */
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+  input[type="checkbox"]::before {
+    /* ...existing styles */
+  
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+.form-control + .form-control {
+margin-top: 1em;
+}
+
+.formContainer {
+    max-width: 700px;
+    box-shadow: 0px 0px 8px var(--mutedPeriwinkleShadow);
+    margin: 80px auto;
+    background-color: white;
+    border: 1px solid #4A5DB1;
+    border-radius: 10px;
+    padding: 80px;
+    padding-top: 40px;
+}
+
+.sectionText {
+    font-size: 18px;
+    color: var(--mutedPeriwinkle);
+    margin-bottom: 30px;
+}
