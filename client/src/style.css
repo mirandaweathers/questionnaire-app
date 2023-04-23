@@ -2,6 +2,7 @@
     font-size: 16px;
     --fontList: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --veryLightBlue: #FAFCFD;
+    --lightBlue: #9dacef;
     --periGrey: #9BA1BA;
     --mutedPeriwinkle: #4A5DB1;
     --mutedPeriwinkleShadow: hsla(229, 58%, 69%, 28%);
@@ -60,7 +61,15 @@ button:hover {
 }
 
 .secondaryButton {
-    background-color: var(--periGrey);
+    background-color: var(--mutedPeriwinkleShadow);
+    border-color: var(--lightBlue);
+    color: var(--mutedPeriwinkle)
+}
+
+.secondaryButton:hover {
+    background-color: var(--lightBlue);
+    border-color: var(--lightBlue);
+    color: var(--electricBlue);
 }
 
 input[type=text], 
@@ -165,6 +174,32 @@ margin-top: 1em;
     border-radius: 10px;
     padding: 80px;
     padding-top: 40px;
+}
+
+.cardContainer {
+    max-width: 400px;
+    margin: 80px auto;
+    box-shadow: 0px 0px 8px var(--mutedPeriwinkleShadow);
+    background-color: white;
+    border: 1px solid var(--mutedPeriwinkle);
+    border-radius: 10px;
+}
+
+.cardImage {
+    height: 250px;
+    /* width: 100%; */
+    padding: 0;
+    margin: 0;
+    border-radius: 10px 10px 0px 0px;
+    background-size: cover;
+    background-position: center;    
+    border-bottom: 1px solid var(--mutedPeriwinkle)
+}
+
+.cardBody {
+    /* top right bottom left */
+    padding: 0 2rem 3rem 2rem;
+    text-align: center;
 }
 
 .sectionText {
