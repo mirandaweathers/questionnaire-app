@@ -1,92 +1,27 @@
-import { FormEvent, useState } from 'react' 
-import { useMultiStepForm } from './customHooks/useMultiStepForm'
-import { UserForm } from './formSteps/UserForm'
-import { AddressForm } from './formSteps/AddressForm'
-import { AccountForm } from './formSteps/AccountForm'
-import './style.css'
-
-type FormData = {
-  clientName: string
-  address: string
-  email: string
-  phone: string
-  adults: string
-  kids: string
-  pets: string
-  notes: string
-  street: string
-  cityState: string
-  zip: string
-  password: string
-}
-
-const INITIAL_DATA: FormData = {
-  clientName: '',
-  address: '',
-  email: '',
-  phone: '',
-  adults: '',
-  kids: '',
-  pets: '',
-  notes: '',
-
-  street: '',
-  cityState: '',
-  zip: '',
-  
-  password: ''
-}
+import { Link } from "react-router-dom"
 
 function App() {
-  const [data, setData] = useState(INITIAL_DATA)
-  const {
-    step,
-    steps,
-    currentStepIndex,
-    isFirstStep,
-    isLastStep,
-    goTo,
-    back,
-    next
-  } = useMultiStepForm([
-    <UserForm {...data} updateFields={updateFields} />,
-    <AddressForm {...data} updateFields={updateFields} />,
-    <AccountForm {...data} updateFields={updateFields} />
-  ])
-
-  function updateFields(fields: Partial<FormData>) {
-    setData(prev => {
-      return { ...prev, ...fields }
-    })
-  }
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault()
-    if(!isLastStep) return next()
-    return alert(JSON.stringify(data))
-  }
-
-  return (
-    <div className="formContainer">
-      <form onSubmit={onSubmit}>
-        <div style={{marginBottom: "20px"}}>
-          <h1>Interior Design Client Questionnaire</h1>
-          <span className="sectionText">
-            Section {currentStepIndex + 1} of {steps.length}
-          </span>
+    return(
+        <div className='cardContainer'>
+            <div className='cardImage' style={{
+                backgroundImage: 'url("https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80")',
+                // backgroundImage: 'url("https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80")'
+            }}></div>
+            <div className='cardBody'>
+                <h1>Welcome!</h1>
+                <Link to='/client-details' state={{ test: 'test-string' }}>
+                    <button type="button">New Client Questionnaire</button>
+                </Link>
+                <br /> <br />
+                <Link to='/dashboard' state={{ test: 'test-string' }}>
+                    <button type="button" className="secondaryButton">Designer Dashboard</button>
+                </Link>
+            </div>
+            
+            
         </div>
-        {step}
-        <div style={{
-          marginTop: "1rem", display: "flex", gap: ".5rem", justifyContent: "space-between"
-        }}>
-          {!isFirstStep && <button type="button" className="secondaryButton" onClick={back}>Back</button>}
-          <button type="submit">
-            {isLastStep ? "Finish and Submit" : "Save and Continue"}
-          </button>
-        </div>
-      </form>
-    </div>
-  )
+        
+    )
 }
 
 export default App
