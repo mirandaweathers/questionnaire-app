@@ -1,18 +1,8 @@
 import { FormWrapper } from "../utilities/FormWrapper";
+import { ClientData } from "../models/ClientData";
 
-type UserData = {
-    clientName: string
-    address: string
-    email: string
-    phone: string
-    adults: string
-    kids: string
-    pets: string
-    notes: string
-}
-
-type UserFormProps = UserData & {
-    updateFields: (fields: Partial<UserData>) => void
+type UserFormProps = ClientData & {
+    updateFields: (fields: Partial<ClientData>) => void
 }
 
 export function UserForm({ clientName, address, email, phone, adults, kids, pets, notes, updateFields }: UserFormProps) {
