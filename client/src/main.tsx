@@ -5,8 +5,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ClientDetailForm from './components/ClientDetailForm';
+import ClientDetailForm from './components/ClientForms/ClientDetailForm';
 import { DesignerDashboard } from './components/DesignerDashboard';
+import { RoomFormSelection } from './components/ClientForms/RoomFormSelection';
+import { LivingRoomForm } from './components/ClientForms/LivingRoomForm';
+import { DiningRoomForm } from './components/ClientForms/DiningRoomForm';
+import { BedRoomForm } from './components/ClientForms/BedroomForm';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +24,22 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DesignerDashboard />
+  },
+  {
+    path: "/rooms",
+    element: <RoomFormSelection />
+  },
+  {
+    path: "/living-room",
+    element: <LivingRoomForm />
+  },
+  {
+    path: "/dining-room",
+    element: <DiningRoomForm />
+  },
+  {
+    path: "/bedroom",
+    element: <BedRoomForm />
   }
 ]);
 
