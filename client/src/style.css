@@ -33,6 +33,11 @@ h3 {
     font-weight: 400;
 }
 
+.subheader {
+    font-size: 24px;
+    font-weight: 400;
+}
+
 label, .label {
     font-size: 18px;
     font-weight: bold;
@@ -53,6 +58,12 @@ button {
     border: 3px solid var(--cornFlower);
     border-radius: 4px;
     padding: 10px 20px;
+    text-decoration: none;
+}
+
+button > a, button > a:visited {
+    color: var(--veryLightBlue);
+    text-decoration: none;
 }
 
 button:hover {
@@ -70,6 +81,24 @@ button:hover {
     background-color: var(--lightBlue);
     border-color: var(--lightBlue);
     color: var(--electricBlue);
+}
+
+.cancelButton {
+    background-color: #f7eded;
+    color: rgb(185, 74, 74);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    border: none;
+    /* border: 3px solid var(--periGrey); */
+    margin: 1rem 0rem;
+    /* padding: 5px 10px; */
+}
+
+.cancelButton:hover{
+    background-color: rgb(185, 74, 74);
+    color: white;
+    border-color: darkred;
 }
 
 input[type=text], 
@@ -107,60 +136,6 @@ input[type=number] {
     gap: 0.5em;
 }
 
-input[type="checkbox"] {
-    /* Add if not using autoprefixer */
-    -webkit-appearance: none;
-    appearance: none;
-    /* For iOS < 15 to remove gradient background */
-    background-color: #fff;
-    /* Not removed via appearance */
-    margin: 0;
-    font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid currentColor;
-  border-radius: 0.15em;
-  transform: translateY(-0.075em);
-  display: grid;
-  place-content: center;
-  }
-
-  input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-  }
-
-  input[type="checkbox"] {
-    /* ...existing styles */
-    display: grid;
-    place-content: center;
-  }
-  
-  input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-  }
-  
-  input[type="checkbox"]:checked::before {
-    transform: scale(1);
-  }
-
-  input[type="checkbox"]::before {
-    /* ...existing styles */
-  
-    transform-origin: bottom left;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  }
-
 .form-control + .form-control {
 margin-top: 1em;
 }
@@ -174,6 +149,7 @@ margin-top: 1em;
     border-radius: 10px;
     padding: 80px;
     padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .cardContainer {
@@ -200,6 +176,49 @@ margin-top: 1em;
     /* top right bottom left */
     padding: 0 2rem 3rem 2rem;
     text-align: center;
+}
+
+.roomCardGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem;;
+}
+
+.roomCardContainer {
+    /* margin: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem; */
+    /* margin: 2rem 0 2rem 0; */
+    margin: 0;
+    display: inline-block;
+    width: 200px;
+}
+
+.roomCardContainer:hover {
+    box-shadow: 0px 0px 8px var(--mutedPeriwinkle);
+}
+
+.roomCardImage {
+    height: 150px;
+}
+
+.roomCardBody {
+    padding: 0 1rem 0 1rem;
+}
+
+.roomCardBody > h2 {
+    font-size: 24px;
+}
+
+a > .roomCardContainer, a:visited > .roomCardContainer {
+    color: var(--electricBlue)
+}
+
+a:hover > .roomCardContainer {
+    background-color: var(--lightBlue);
+    color: white;
 }
 
 .sectionText {
