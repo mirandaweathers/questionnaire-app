@@ -10,7 +10,7 @@ export function FormWrapper({ title, children }: FormWrapperProps) {
         <>
             <h2 style={{
                 margin: 0,
-                marginBottom: "2rem"
+                marginBottom: "1rem"
             }}>
                 {title}
             </h2>
