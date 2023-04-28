@@ -9,11 +9,11 @@ function App() {
             }}></div>
             <div className='cardBody'>
                 <h1>Welcome!</h1>
-                <Link to='/client-details' state={{ test: 'test-string' }}>
+                <Link to='/client-details'>
                     <button type="button">New Client Questionnaire</button>
                 </Link>
                 <br /> <br />
-                <Link to='/dashboard' state={{ test: 'test-string' }}>
+                <Link to='/dashboard'>
                     <button type="button" className="secondaryButton">Designer Dashboard</button>
                 </Link>
             </div>
