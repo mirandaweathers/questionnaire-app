@@ -66,7 +66,7 @@ function ClientDetailForm(props: any) {
   }
 
   const addClient = async (clientData:any) => {
-    alert(JSON.stringify(clientData))
+    // alert(JSON.stringify(clientData))
 
     try {
       const response = await fetch('http://localhost:3000/clients', {
@@ -107,7 +107,6 @@ function ClientDetailForm(props: any) {
       <form onSubmit={onSubmit}>
         <div style={{marginBottom: "20px"}}>
           <h1>Interior Design Client Questionnaire</h1>
-          <p>{test}</p>
           <span className="sectionText">
             Section {currentStepIndex + 1} of {steps.length}
           </span>

@@ -261,7 +261,7 @@ export function LivingRoomForm() {
         submission.entertaining = JSON.stringify(entertaining);
         submission.notes = notes;
 
-        alert(JSON.stringify(submission))
+        // alert(JSON.stringify(submission))
 
         fetch('http://localhost:3000/livingroom', {
             method: 'POST',

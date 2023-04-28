@@ -224,7 +224,7 @@ export function BedRoomForm() {
         submission.furnitureToKeep = furniture;
         submission.otherNotes = notes;
 
-        alert(JSON.stringify(submission))
+        // alert(JSON.stringify(submission))
 
         fetch('http://localhost:3000/bedroom', {
             method: 'POST',

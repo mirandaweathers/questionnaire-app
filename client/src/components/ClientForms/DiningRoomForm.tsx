@@ -229,7 +229,7 @@ export function DiningRoomForm() {
         submission.entertaining = JSON.stringify(entertaining);
         submission.notes = notes;
 
-        alert(JSON.stringify(submission))
+        // alert(JSON.stringify(submission))
 
         fetch('http://localhost:3000/diningroom', {
             method: 'POST',
