@@ -12,9 +12,11 @@ export function RoomFormSelection(props:any) {
         diningRoomDone
     } = location.state;
 
-    const exit = () => (
-        navigate('/', {replace: true})
-    )
+    const exit = () => {
+        if(confirm("Are you sure? You won't be able to return!")) {
+            window.location.pathname = '/';
+        }
+    }
 
     return(
         <div className="formContainer" style={{maxWidth: '900px'}}>
@@ -86,7 +88,7 @@ export function RoomFormSelection(props:any) {
                 
             </div>
 
-            <button className="cancelButton" style={{marginTop: '40px'}} onClick={exit}>Cancel & Exit</button>
+            <button className="cancelButton" style={{marginTop: '40px'}} onClick={exit}>Save & Exit</button>
             
         </div>
     )
