@@ -3,7 +3,7 @@ import { useMultiStepForm } from '../../customHooks/useMultiStepForm'
 import { ProjectForm } from '../ClientForms/ProjectForm'
 import { HouseholdForm } from '../ClientForms/HouseholdForm'
 import '../../style.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 type FormData = {
   firstName: string
@@ -16,10 +16,6 @@ type FormData = {
   kids: string
   pets: string
   notes: string
-  street: string
-  cityState: string
-  zip: string
-  password: string
 }
 
 const INITIAL_DATA: FormData = {
@@ -32,16 +28,11 @@ const INITIAL_DATA: FormData = {
   kids: '',
   pets: '',
   notes: '',
-  budget: '',
-
-  street: '',
-  cityState: '',
-  zip: '',
-  
-  password: ''
+  budget: ''
 }
 
 function ClientDetailForm(props: any) {
+  const navigate = useNavigate();
   const location = useLocation();
   const {test} = location.state;
   const [data, setData] = useState(INITIAL_DATA)
@@ -66,15 +57,49 @@ function ClientDetailForm(props: any) {
     })
   }
 
-  function onSubmit(e: FormEvent) {
+  
+  async function onSubmit(e: FormEvent) {
     e.preventDefault()
     if(!isLastStep) return next()
-    return window.location.pathname = '/rooms';
+    
+    await addClient(data);
   }
 
+  const addClient = async (clientData:any) => {
+    alert(JSON.stringify(clientData))
+
+    try {
+      const response = await fetch('http://localhost:3000/clients', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(clientData)
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to add client');
+      }
+  
+      const data = await response.json();
+      console.log(data);
+      return navigate('/rooms', { 
+        replace: true, 
+        state: {
+            email: clientData.email, 
+            name: clientData.firstName
+        }
+    });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   function onCancel(e: FormEvent) {
-    setData(INITIAL_DATA);
-    window.location.pathname = '/';
+    if(confirm("Are you sure? All new client data will be lost!")) {
+      setData(INITIAL_DATA);
+      window.location.pathname = '/';
+    }
   }
 
   return (
@@ -93,12 +118,12 @@ function ClientDetailForm(props: any) {
         }}>
           {!isFirstStep && <button type="button" className="secondaryButton" onClick={back}>Back</button>}
           
-            {isLastStep ? <Link className="button" to={'/rooms'} state={{ email: data.email, name: data.firstName }}>Finish and Submit</Link> : <button type="submit">Save and Continue</button>}
+            {isLastStep ? <button className="button" type="submit">Finish and Submit</button> : <button type="submit">Save and Continue</button>}
           
           
         </div>
       </form>
-      <button type="button" className='cancelButton' onClick={onCancel}>Cancel</button>
+      <button type="button" className='cancelButton' onClick={onCancel}>Cancel & Exit</button>
     </div>
   )
 }
