@@ -21,8 +21,7 @@ export function ProjectForm({ firstName, lastName, address, email, phone, budget
             />
 
             <label>Last Name</label>
-            <input 
-                autoFocus 
+            <input  
                 required 
                 type="text" 
                 value={lastName} 
