@@ -34,7 +34,6 @@ const INITIAL_DATA: FormData = {
 function ClientDetailForm(props: any) {
   const navigate = useNavigate();
   const location = useLocation();
-  const {test} = location.state;
   const [data, setData] = useState(INITIAL_DATA)
   const {
     step,

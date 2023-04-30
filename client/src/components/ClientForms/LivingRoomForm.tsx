@@ -61,31 +61,31 @@ export function LivingRoomForm() {
     const styleOptions = [
         {
             id: 'myCheckbox1',
-            imageUrl: "url('../../public/images/bedroom-midcentury-modern.jpg')",
+            imageUrl: "url('../../public/images/lr-mcm.jpg')",
             bgPosition: 'center',
             labelText: 'Midcentury Modern',
         },
         {
             id: 'myCheckbox2',
-            imageUrl: "url('../../public/images/bedroom-traditional.jpg')",
-            bgPosition: 'left center',
+            imageUrl: "url('../../public/images/lr-traditional.jpg')",
+            bgPosition: 'center',
             labelText: 'Traditional',
         },
         {
             id: 'myCheckbox3',
-            imageUrl: "url('../../public/images/bedroom-bohemian.jpg')",
+            imageUrl: "url('../../public/images/lr-boho.jpg')",
             bgPosition: 'center',
             labelText: 'Bohemian',
         },
         {
             id: 'myCheckbox4',
-            imageUrl: "url('../../public/images/bedroom-coastal.jpg')",
-            bgPosition: 'center',
+            imageUrl: "url('../../public/images/lr-coastal.jpg')",
+            bgPosition: 'left center',
             labelText: 'Coastal',
         },
         {
             id: 'myCheckbox5',
-            imageUrl: "url('../../public/images/bedroom-shabby-chic.jpg')",
+            imageUrl: "url('../../public/images/lr-shabbychic.jpg')",
             bgPosition: 'center',
             labelText: 'Shabby Chic',
         },
@@ -103,13 +103,13 @@ export function LivingRoomForm() {
         },
         {
             id: 'myCheckbox8',
-            imageUrl: "url('../../public/images/bedroom-scandinavian.jpg')",
+            imageUrl: "url('../../public/images/lr-scandinavian.jpg')",
             bgPosition: 'center',
             labelText: 'Scandinavian',
         },
         {
             id: 'myCheckbox9',
-            imageUrl: "url('../../public/images/bedroom-maximalist-colorful.jpg')",
+            imageUrl: "url('../../public/images/livingroom-artsy.jpg')",
             bgPosition: 'center',
             labelText: 'Colorful & Artsy',
         },
@@ -327,7 +327,7 @@ export function LivingRoomForm() {
                                 <label htmlFor={option.id}>
                                     <div
                                         className="checkboxcard"
-                                        style={{backgroundImage: option.imageUrl}}
+                                        style={{backgroundImage: option.imageUrl, backgroundPosition: option.bgPosition}}
                                     ></div>
                                     <div className="checkboxlabel">
                                         {option.labelText}

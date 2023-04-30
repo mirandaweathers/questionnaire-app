@@ -80,55 +80,55 @@ export function DiningRoomForm() {
     const styleOptions = [
         {
             id: 'myCheckbox1',
-            imageUrl: "url('../../public/images/bedroom-midcentury-modern.jpg')",
+            imageUrl: "url('../../public/images/dr-mcm.jpg')",
             bgPosition: 'center',
             labelText: 'Midcentury Modern',
         },
         {
             id: 'myCheckbox2',
-            imageUrl: "url('../../public/images/bedroom-traditional.jpg')",
-            bgPosition: 'left center',
+            imageUrl: "url('../../public/images/dr-traditional.jpg')",
+            bgPosition: 'right center',
             labelText: 'Traditional',
         },
         {
             id: 'myCheckbox3',
-            imageUrl: "url('../../public/images/bedroom-bohemian.jpg')",
-            bgPosition: 'center',
+            imageUrl: "url('../../public/images/dr-boho.jpg')",
+            bgPosition: 'right center',
             labelText: 'Bohemian',
         },
         {
             id: 'myCheckbox4',
-            imageUrl: "url('../../public/images/bedroom-coastal.jpg')",
+            imageUrl: "url('../../public/images/dr-coastal.jpg')",
             bgPosition: 'center',
             labelText: 'Coastal',
         },
         {
             id: 'myCheckbox5',
-            imageUrl: "url('../../public/images/bedroom-shabby-chic.jpg')",
-            bgPosition: 'center',
-            labelText: 'Shabby Chic',
+            imageUrl: "url('../../public/images/dr-farmhouse.jpg')",
+            bgPosition: 'bottom ',
+            labelText: 'Modern Farmhouse',
         },
         {
             id: 'myCheckbox6',
-            imageUrl: "url('../../public/images/bedroom-mountain-cabin.jpg')",
+            imageUrl: "url('../../public/images/dr-rustic.jpg')",
             bgPosition: 'center',
             labelText: 'Rustic Cabin',
         },
         {
             id: 'myCheckbox7',
-            imageUrl: "url('../../public/images/bedroom-glam.jpg')",
-            bgPosition: 'center',
+            imageUrl: "url('../../public/images/dr-glam.jpg')",
+            bgPosition: 'left center',
             labelText: 'Glam',
         },
         {
             id: 'myCheckbox8',
-            imageUrl: "url('../../public/images/bedroom-scandinavian.jpg')",
+            imageUrl: "url('../../public/images/dr-scandinavian.jpg')",
             bgPosition: 'center',
             labelText: 'Scandinavian',
         },
         {
             id: 'myCheckbox9',
-            imageUrl: "url('../../public/images/bedroom-maximalist-colorful.jpg')",
+            imageUrl: "url('../../public/images/dr-colorful.jpg')",
             bgPosition: 'center',
             labelText: 'Colorful & Artsy',
         },
@@ -295,7 +295,7 @@ export function DiningRoomForm() {
                                 <label htmlFor={option.id}>
                                     <div
                                         className="checkboxcard"
-                                        style={{backgroundImage: option.imageUrl}}
+                                        style={{backgroundImage: option.imageUrl, backgroundPosition: option.bgPosition}}
                                     ></div>
                                     <div className="checkboxlabel">
                                         {option.labelText}
