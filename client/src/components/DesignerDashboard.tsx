@@ -33,6 +33,11 @@ export const DesignerDashboard = () => {
         if (!selectedClient) {
             return null;
         }
+        let lrEntertaining;
+        let drEntertaining;
+
+        if (selectedClient.lrEntertaining) lrEntertaining = JSON.parse(selectedClient.lrEntertaining.replace(/\\/g, ''));
+        if (selectedClient.drEntertaining) drEntertaining = JSON.parse(selectedClient.drEntertaining.replace(/\\/g, ''));
 
         return (
             <Dialog visible={displayModal} onHide={hideModal}>
@@ -63,6 +68,51 @@ export const DesignerDashboard = () => {
                     <li>Color: {selectedClient.lrColor}</li>
                     <li>Furniture to keep: {selectedClient.lrFurnitureToKeep}</li>
                     <li>Other notes: {selectedClient.lrOtherNotes}</li>
+                    {lrEntertaining &&
+                        <li>Entertaining:
+                            <ul>
+                                <li>Parties: 
+                                    <ul>
+                                        <li>
+                                            Number of People: {lrEntertaining.parties.numPeople}
+                                        </li>
+                                        <li>
+                                            Formal/Informal: {lrEntertaining.parties.formalInformal}
+                                        </li>
+                                        <li>
+                                            How Often: {lrEntertaining.parties.howOften}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Dinners: 
+                                    <ul>
+                                        <li>
+                                            Number of People: {lrEntertaining.dinners.numPeople}
+                                        </li>
+                                        <li>
+                                            Formal/Informal: {lrEntertaining.dinners.formalInformal}
+                                        </li>
+                                        <li>
+                                            How Often: {lrEntertaining.dinners.howOften}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Holidays: 
+                                    <ul>
+                                        <li>
+                                            Number of People: {lrEntertaining.holidays.numPeople}
+                                        </li>
+                                        <li>
+                                            Formal/Informal: {lrEntertaining.holidays.formalInformal}
+                                        </li>
+                                        <li>
+                                            How Often: {lrEntertaining.holidays.howOften}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
         
                 <h4>Dining Room Information:</h4>
@@ -73,6 +123,51 @@ export const DesignerDashboard = () => {
                     <li>Color: {selectedClient.drColor}</li>
                     <li>Furniture to keep: {selectedClient.drFurnitureToKeep}</li>
                     <li>Other notes: {selectedClient.drOtherNotes}</li>
+                    {drEntertaining &&
+                        <li>Entertaining:
+                            <ul>
+                                <li>Parties: 
+                                    <ul>
+                                        <li>
+                                            Number of People: {drEntertaining.parties.numPeople}
+                                        </li>
+                                        <li>
+                                            Formal/Informal: {drEntertaining.parties.formalInformal}
+                                        </li>
+                                        <li>
+                                            How Often: {drEntertaining.parties.howOften}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Dinners: 
+                                    <ul>
+                                        <li>
+                                            Number of People: {drEntertaining.dinners.numPeople}
+                                        </li>
+                                        <li>
+                                            Formal/Informal: {drEntertaining.dinners.formalInformal}
+                                        </li>
+                                        <li>
+                                            How Often: {drEntertaining.dinners.howOften}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Holidays: 
+                                    <ul>
+                                        <li>
+                                            Number of People: {drEntertaining.holidays.numPeople}
+                                        </li>
+                                        <li>
+                                            Formal/Informal: {drEntertaining.holidays.formalInformal}
+                                        </li>
+                                        <li>
+                                            How Often: {drEntertaining.holidays.howOften}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
                 
             </Dialog>
