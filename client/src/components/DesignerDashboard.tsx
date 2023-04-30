@@ -47,6 +47,8 @@ export const DesignerDashboard = () => {
                     <li>Adults: {selectedClient.adults}</li>
                     <li>Kids: {selectedClient.kids}</li>
                     <li>Budget: {selectedClient.budget}</li>
+                    <li>Pets: {selectedClient.pets}</li>
+                    <li>Notes: {selectedClient.notes}</li>
                 </ul>
 
                 <h4>Bedroom Information:</h4>
@@ -57,7 +59,7 @@ export const DesignerDashboard = () => {
                     <li>Color: {selectedClient.brColor}</li>
                     <li>Bedding: {selectedClient.bedding}</li>
                     <li>Furniture to keep: {selectedClient.brFurnitureToKeep}</li>
-                    <li>Other notes: {selectedClient.brOtherNotes}</li>
+                    <li>Other notes: {selectedClient.brNotes}</li>
                 </ul>
         
                 <h4>Living Room Information:</h4>
@@ -67,7 +69,7 @@ export const DesignerDashboard = () => {
                     <li>Activities: {selectedClient.lrActivities}</li>
                     <li>Color: {selectedClient.lrColor}</li>
                     <li>Furniture to keep: {selectedClient.lrFurnitureToKeep}</li>
-                    <li>Other notes: {selectedClient.lrOtherNotes}</li>
+                    <li>Other notes: {selectedClient.lrnotes}</li>
                     {lrEntertaining &&
                         <li>Entertaining:
                             <ul>
@@ -119,10 +121,10 @@ export const DesignerDashboard = () => {
                 <ul>
                     <li>Style: {selectedClient.drStyle}</li>
                     <li>Mood: {selectedClient.drMood}</li>
-                    <li>Activities: {selectedClient.drActivities}</li>
+                    <li>Storage: {selectedClient.drStorage}</li>
                     <li>Color: {selectedClient.drColor}</li>
                     <li>Furniture to keep: {selectedClient.drFurnitureToKeep}</li>
-                    <li>Other notes: {selectedClient.drOtherNotes}</li>
+                    <li>Other notes: {selectedClient.drNotes}</li>
                     {drEntertaining &&
                         <li>Entertaining:
                             <ul>
